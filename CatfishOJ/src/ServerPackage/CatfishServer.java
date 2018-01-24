@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 public class CatfishServer {
 
-    final int NUMBER_OF_PROBLEMS = 4 ;
+    final static int NUMBER_OF_PROBLEMS = 4 ;
 
 
     private ServerSocket serverSocket;
@@ -106,14 +106,17 @@ public class CatfishServer {
     }
 
     private static void getInfo(String[] InfoTaken ) {
-        String Info[] = InfoTaken[0].split(",") ;
-        String secInfo[] = InfoTaken[1].split(",") ;
-        HashMap < String , Integer > map = new HashMap<>() ;
-        for(int i = 0; i < 3 ; i++){
-            map.put(secInfo[2*i], Integer.parseInt(secInfo[2*i + 1]) ) ;
+        if(InfoTaken != null) {
+            String Info[] = InfoTaken[0].split(",") ;
+            String secInfo[] = InfoTaken[1].split(",") ;
+            HashMap < String , Integer > map = new HashMap<>() ;
+            for(int i = 0; i < NUMBER_OF_PROBLEMS ; i++){
+                map.put(secInfo[2*i], Integer.parseInt(secInfo[2*i + 1]) ) ;
+            }
+            userRecords.add( new User(Info[0] , Info[1] , Integer.parseInt(Info[2]), map ,  Integer.parseInt(Info[3]), Integer.parseInt(Info[4]) ,Integer.parseInt(Info[5]),
+                    Integer.parseInt(Info[6])) ) ;
         }
-        userRecords.add( new User(Info[0] , Info[1] , Integer.parseInt(Info[2]), map ,  Integer.parseInt(Info[3]), Integer.parseInt(Info[4]) ,Integer.parseInt(Info[5]),
-                Integer.parseInt(Info[6])) ) ;
+
     }
     public static void addUser(User user) {
         userRecords.add(user);
