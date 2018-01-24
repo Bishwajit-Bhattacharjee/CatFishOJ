@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="232.0" style="-fx-background-color: #2d3447;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="54.0" layoutY="43.0" prefHeight="40.0" prefWidth="77.0" text="Menu" textFill="WHITE">
+         <font>
+            <Font name="Jokerman" size="25.0" />
+         </font>
+      </Label>
+      <JFXButton alignment="BASELINE_LEFT" layoutX="65.0" layoutY="141.0" text="Tasks" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="CENTER" layoutX="39.0" layoutY="171.0" text="User Statistics" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="BASELINE_LEFT" layoutX="60.0" layoutY="201.0" onAction="#LogoutButtonClicked" text="Logout" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="BASELINE_LEFT" layoutX="63.0" layoutY="556.0" text="About" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="71.0" layoutY="231.0" onAction="#ExitButtonClicked" text="Exit" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
