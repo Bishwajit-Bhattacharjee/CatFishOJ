@@ -1,0 +1,24 @@
+CatFish3:
+
+you will be given two numbers and you need to print their 
+three numbers on a single line . They are respectively their sum , subtraction , 
+and multiplication.  Trailing and leading spaces are ignored .
+So , chill :D 
+
+
+Input:
+Input starts with a number T( <= 10 ) denoting the number of test case.
+For each of the next T lines , you will be given two integer
+a, b(1 <= a, b <= 1,000 ) .
+
+Output:
+You need to print three numbers according to the description above .
+
+Sample Input:
+2 
+1 2 
+2 3  
+
+Output:
+3 -1 2
+5 -1 6  

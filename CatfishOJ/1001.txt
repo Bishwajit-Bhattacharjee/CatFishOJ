@@ -1,0 +1,25 @@
+Catfish
+
+Welcome to the first problem .
+Here , you will be given two numbers and you need to print their 
+sum on a single line .Trailing and leading spaces are ignored .
+So , chill :D 
+
+
+Input :
+Input starts with a number T( <= 10 ) denoting the number of test case.
+For each of the next T lines , you will be given two integer
+a, b(1 <= a, b <= 1,000,000,000 ) .
+
+
+Output:
+For each case print their sum on each line . See the samples to be clear .
+
+
+Sample Intput:
+2
+10 12
+12 9
+Sample Output : 
+22
+21 

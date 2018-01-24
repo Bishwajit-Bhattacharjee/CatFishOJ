@@ -1,0 +1,22 @@
+CatFish
+You will be given two strings and you need to concat them and
+print the resulted string .Trailing and leading spaces are ignored .
+So , chill :D 
+
+Input :
+Input starts with a number T( <= 10 ) denoting the number of test case.
+For each of the next T lines , you will be given two Strings .
+Lengths of the strings will not be more than 50 .
+
+Output :
+You need to concat the 2nd string to the 1st one .
+
+Sample Input:
+2
+a b 
+Rifat Sir 
+
+Output:
+ab
+RifatSir
+ 

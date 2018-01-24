@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="411.0" prefWidth="571.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="100.0" layoutX="71.0" layoutY="230.0" rotate="90.0" startX="-100.0" stroke="#2d3447" visible="false" />
+      <Label layoutX="71.0" layoutY="155.0" text="Handle : ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="203.0" text="Country : ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="151.0" layoutY="157.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="95.0" prefWidth="571.0" style="-fx-background-color: #2d3447;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="51.0" layoutY="66.0" text="User Info" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="151.0" layoutY="203.0" text="Bangladesh">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <PieChart layoutX="222.0" layoutY="102.0" prefHeight="311.0" prefWidth="311.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,6 @@
+ab
+zx
+intmain
+RifatSir
+mainint
+includestdio

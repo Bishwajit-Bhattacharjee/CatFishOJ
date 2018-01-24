@@ -1,0 +1,7 @@
+6
+a b 
+z x
+int main
+Rifat Sir
+main int 
+include stdio
