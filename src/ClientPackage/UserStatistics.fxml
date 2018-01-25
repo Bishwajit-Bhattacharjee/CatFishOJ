@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientPackage.UserStatisticsController">
+   <children>
+      <AnchorPane layoutY="-10.0" prefHeight="600.0" prefWidth="232.0" style="-fx-background-color: #2d3447;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="54.0" layoutY="43.0" prefHeight="40.0" prefWidth="77.0" text="Menu" textFill="WHITE">
+               <font>
+                  <Font name="Jokerman" size="25.0" />
+               </font>
+            </Label>
+            <JFXButton alignment="CENTER" layoutX="39.0" layoutY="171.0" text="User Statistics" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" layoutX="60.0" layoutY="201.0" onAction="#LogoutButtonClicked" text="Logout" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" layoutX="63.0" layoutY="556.0" text="About" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="71.0" layoutY="231.0" onAction="#ExitButtonClicked" text="Exit" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" layoutX="65.0" layoutY="141.0" onAction="#BackButtonClicked" style="-fx-background-color: #2d3447;" text="Tasks" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="232.0" layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="411.0" prefWidth="537.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Line endX="100.0" layoutX="156.0" layoutY="254.0" rotate="90.0" startX="-100.0" stroke="#2d3447" visible="false" />
+            <Label layoutX="157.0" layoutY="181.0" text="Handle : " textFill="#2d3447">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="156.0" layoutY="227.0" text="Country : ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="HandleName" layoutX="234.0" layoutY="181.0" text="Label" textFill="#2d3447">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="95.0" prefWidth="571.0" style="-fx-background-color: #2d3447;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="182.0" layoutY="24.0" text="User Info" textFill="WHITE">
+                     <font>
+                        <Font name="Jokerman" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="236.0" layoutY="227.0" text="Bangladesh">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="156.0" layoutY="271.0" text="Attempted :">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="156.0" layoutY="313.0" text="Solved :">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="AttemptedLabel" layoutX="255.0" layoutY="271.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="SolvedLabel" layoutX="225.0" layoutY="313.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#2d3447" spread="0.4" />
+         </effect>
+      </AnchorPane>
+      <ImageView fx:id="imageView" fitHeight="80.0" fitWidth="193.0" layoutX="555.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Catfish%20Logo2.png" />
+         </image>
+      </ImageView>
+      <PieChart fx:id="pieChart" layoutX="821.0" layoutY="153.0" prefHeight="399.0" prefWidth="537.0" title=" User Statistics" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="-3.0" />
+      <Label fx:id="NoSubmission" layoutX="885.0" layoutY="324.0" opacity="0.4" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
