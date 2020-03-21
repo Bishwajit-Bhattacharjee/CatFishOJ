@@ -163,7 +163,7 @@ public class VerdictMenuController{
             VerdictButton.setStyle("-fx-text-fill: #bd2031");
         }
         else if(VerdictLabel.equals("Wrong Answer")) {
-            VerdictButton.setText("Wrong Answer");
+            VerdictButton.setText("Time Limit Exceeded!!");
             VerdictButton.setStyle("-fx-text-fill: #bd2031");
         }
     }

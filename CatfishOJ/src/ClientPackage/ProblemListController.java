@@ -2,20 +2,15 @@ package ClientPackage;
 
 
 import Common.Problem;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
-import java.util.ArrayList;
 
 //Client
 public class ProblemListController {
 
     private CatfishClient catfishClient;
-    private ArrayList<Problem> problemList;
-    ObservableList<Problem> list;
+
     @FXML
     TableView<Problem> problemTable;
 
@@ -33,20 +28,9 @@ public class ProblemListController {
 
     @FXML
     private void initialize() {
-
-        problemList = Problem.problemList;
-        System.out.println(Problem.problemList);
-
-        list = FXCollections.observableArrayList(problemList);
-        problemTable.setItems(list);
         // Initialize the person table with the two columns.
         IDColumn.setCellValueFactory(cellData -> cellData.getValue().getProblemIDProperty());
-
         ProblemNameColumn.setCellValueFactory(cellData -> cellData.getValue().getProblemNameProperty());
-
-        SolvedByTriedColumn.setCellValueFactory(cellData -> cellData.getValue().getSolvedByTried());
-
-        AcceptedByTotalColumn.setCellValueFactory(cellData -> cellData.getValue().getAcceptedByTotal());
 
         problemTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showProblemDetails(newValue));
@@ -98,5 +82,6 @@ public class ProblemListController {
 
     public void setCatfishClient(CatfishClient catfishClient) {
         this.catfishClient = catfishClient;
+        problemTable.setItems(Problem.getProblemListObservable());
     }
 }

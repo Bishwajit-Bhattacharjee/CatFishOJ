@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 public class CatfishServer {
 
-    final static int NUMBER_OF_PROBLEMS = 4 ;
+    final int NUMBER_OF_PROBLEMS = 3 ;
 
 
     private ServerSocket serverSocket;
@@ -93,30 +93,28 @@ public class CatfishServer {
                 tmp.setDistinctUserTriedCnt(Integer.parseInt(lineVector1[3]));
                 tmp.setAcceptedCnt(Integer.parseInt(lineVector1[4]));
                 tmp.setTotalCnt(Integer.parseInt(lineVector1[5]));
-                //System.out.println(tmp);
                 Problem.problemList.set(cnt ,tmp) ;
                 cnt++;
             }
-            System.out.println(Problem.problemList);
 
         }catch (Exception e ) {
             e.printStackTrace();
         }
 
+
+
+
     }
 
     private static void getInfo(String[] InfoTaken ) {
-        if(InfoTaken != null) {
-            String Info[] = InfoTaken[0].split(",") ;
-            String secInfo[] = InfoTaken[1].split(",") ;
-            HashMap < String , Integer > map = new HashMap<>() ;
-            for(int i = 0; i < NUMBER_OF_PROBLEMS ; i++){
-                map.put(secInfo[2*i], Integer.parseInt(secInfo[2*i + 1]) ) ;
-            }
-            userRecords.add( new User(Info[0] , Info[1] , Integer.parseInt(Info[2]), map ,  Integer.parseInt(Info[3]), Integer.parseInt(Info[4]) ,Integer.parseInt(Info[5]),
-                    Integer.parseInt(Info[6])) ) ;
+        String Info[] = InfoTaken[0].split(",") ;
+        String secInfo[] = InfoTaken[1].split(",") ;
+        HashMap < String , Integer > map = new HashMap<>() ;
+        for(int i = 0; i < 3 ; i++){
+            map.put(secInfo[2*i], Integer.parseInt(secInfo[2*i + 1]) ) ;
         }
-
+        userRecords.add( new User(Info[0] , Info[1] , Integer.parseInt(Info[2]), map ,  Integer.parseInt(Info[3]), Integer.parseInt(Info[4]) ,Integer.parseInt(Info[5]),
+                Integer.parseInt(Info[6])) ) ;
     }
     public static void addUser(User user) {
         userRecords.add(user);

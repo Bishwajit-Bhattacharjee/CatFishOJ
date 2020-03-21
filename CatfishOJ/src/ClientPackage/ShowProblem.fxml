@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="980.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientPackage.ShowProblemController">
    <children>
-      <AnchorPane layoutX="272.0" layoutY="197.0" prefHeight="403.0" prefWidth="708.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="272.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="197.0">
+      <AnchorPane layoutX="272.0" layoutY="154.0" prefHeight="446.0" prefWidth="708.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="272.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="154.0">
          <children>
             <JFXTextArea fx:id="ProblemTextArea" editable="false" layoutX="53.0" layoutY="36.0" prefHeight="445.0" prefWidth="708.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
@@ -61,19 +61,9 @@
       <JFXButton buttonType="RAISED" layoutX="290.0" layoutY="82.0" prefHeight="15.0" prefWidth="84.0" style="-fx-background-color: #2d3447;" text="PROBLEM" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="422.0" layoutY="82.0" onAction="#SubmitButtonClicked" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #2d3447;" text="SUBMIT CODE" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="571.0" layoutY="82.0" prefHeight="15.0" prefWidth="84.0" style="-fx-background-color: #2d3447;" text="STATUS" textFill="WHITE" />
-      <Label fx:id="ProblemNameLabel" layoutX="546.0" layoutY="115.0" prefHeight="27.0" prefWidth="219.0" text="Label" textAlignment="CENTER" textFill="#2d3447" AnchorPane.leftAnchor="546.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="127.0">
+      <Label fx:id="ProblemNameLabel" layoutX="546.0" layoutY="120.0" prefHeight="27.0" prefWidth="219.0" text="Label" textAlignment="RIGHT" textFill="#2d3447">
          <font>
             <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="ProblemNameLabel1" layoutX="546.0" layoutY="154.0" prefHeight="16.0" prefWidth="219.0" text="Time Limit : 3 seconds" textAlignment="CENTER" textFill="#2d3447">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="ProblemNameLabel11" layoutX="546.0" layoutY="174.0" prefHeight="20.0" prefWidth="219.0" text="Memory Limit : 32MB" textAlignment="CENTER" textFill="#2d3447">
-         <font>
-            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
    </children>

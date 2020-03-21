@@ -2,7 +2,10 @@ package ServerPackage;
 
 import java.util.HashMap;
 
-import Common.*;
+import Common.ClientSubmit;
+import Common.LoginInfo;
+import Common.NetworkUtil;
+import Common.RegistrationInfo;
 
 //Server
 public class ServerReadThread implements Runnable{
@@ -31,33 +34,22 @@ public class ServerReadThread implements Runnable{
                     //System.out.println("is something");
                     if(object instanceof RegistrationInfo) {
                         //synchronized ((RegistrationInfo)object) {
-                        RegistrationInfo validator = (RegistrationInfo) object;
-                        RegistrationValidator registrationValidator = new RegistrationValidator(validator) ;
-                        //System.out.println("hello from registration ");
-                        nc.write(registrationValidator.returnRegistrationValidator());
+                            RegistrationInfo validator = (RegistrationInfo) object;
+                            RegistrationValidator registrationValidator = new RegistrationValidator(validator) ;
 
-                        // }
+                            //System.out.println("hello from registration ");
+                            nc.write(registrationValidator.returnRegistrationValidator());
 
-                    }
-                    else if(object instanceof CurrentUser){
-                        CurrentUser tmp = (CurrentUser) object;
-                        for(int i = 0; i < CatfishServer.userRecords.size(); i++){
-                            if(CatfishServer.userRecords.get(i).getHandle().equalsIgnoreCase(tmp.getCurrentUser().getHandle())){
-                                tmp.setCurrentUser(CatfishServer.userRecords.get(i));
-                                break;
-                            }
-                        }
-                        System.out.println(tmp.getCurrentUser());
-                        nc.reset();
-                        nc.write(tmp) ;
+                       // }
+
                     }
                     else if( object instanceof LoginInfo) {
-                        //   synchronized ((LoginValidator)object) {
-                        LoginInfo validator = (LoginInfo) object;
-                        LoginValidator loginValidator = new LoginValidator(validator) ;
+                     //   synchronized ((LoginValidator)object) {
+                            LoginInfo validator = (LoginInfo) object;
+                            LoginValidator loginValidator = new LoginValidator(validator) ;
 
-                        nc.write(loginValidator.returnLoginValue());
-                        //   }
+                            nc.write(loginValidator.returnLoginValue());
+                     //   }
                     }
 
                     else if(object instanceof ClientSubmit) {
@@ -69,13 +61,12 @@ public class ServerReadThread implements Runnable{
                         //System.out.println(verdict.toString());
                         nc.write(verdict.toString()) ;
                     }
-
                 }
 
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } finally{
+        } finally {
             //System.out.println("finallyy!!!!!");
             nc.closeConnection();
         }

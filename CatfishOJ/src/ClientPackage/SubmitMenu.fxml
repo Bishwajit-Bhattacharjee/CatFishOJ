@@ -62,30 +62,15 @@
       <JFXButton buttonType="RAISED" layoutX="290.0" layoutY="82.0" onAction="#ProblemButtonClicked" prefHeight="15.0" prefWidth="84.0" style="-fx-background-color: #2d3447;" text="PROBLEM" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="422.0" layoutY="82.0" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #2d3447;" text="SUBMIT CODE" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="571.0" layoutY="82.0" prefHeight="15.0" prefWidth="84.0" style="-fx-background-color: #2d3447;" text="STATUS" textFill="WHITE" />
-      <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="440.0" layoutY="547.0" onAction="#SubmitButtonClicked" style="-fx-background-color: #2d3447;" text="Submit Code" textFill="WHITE">
+      <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="546.0" layoutY="547.0" onAction="#SubmitButtonClicked" style="-fx-background-color: #2d3447;" text="Submit" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
       <JFXComboBox fx:id="chooseLanguage" focusColor="#2d3447" layoutX="688.0" layoutY="80.0" onAction="#comboButtonClicked" prefHeight="30.0" prefWidth="128.0" promptText="   Choose Language" style="-fx-background-color: #b2beb5;" unFocusColor="WHITE" />
-      <Label fx:id="ProblemNameLabel" layoutX="546.0" layoutY="127.0" prefHeight="27.0" prefWidth="219.0" text="Label" textAlignment="CENTER" textFill="#2d3447" AnchorPane.leftAnchor="546.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="127.0">
+      <Label fx:id="ProblemNameLabel" layoutX="556.0" layoutY="130.0" prefHeight="27.0" prefWidth="219.0" text="Label" textAlignment="RIGHT" textFill="#2d3447" AnchorPane.leftAnchor="546.0" AnchorPane.topAnchor="120.0">
          <font>
             <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="594.0" layoutY="547.0" onAction="#UploadButtonClicked" style="-fx-background-color: #2d3447;" text="Upload File...." textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <Label layoutX="559.0" layoutY="550.0" text="or" textFill="#2d3447">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="fileName" layoutX="710.0" layoutY="552.0" prefHeight="20.0" prefWidth="77.0" text="Label" visible="false">
-         <font>
-            <Font size="14.0" />
          </font>
       </Label>
    </children>

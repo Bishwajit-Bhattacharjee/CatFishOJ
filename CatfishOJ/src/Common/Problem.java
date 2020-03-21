@@ -28,6 +28,7 @@ public class Problem implements Serializable{
         this.distinctUserTriedCnt = 0;
         this.acceptedCnt =  0;
         this.totalCnt = 0 ;
+
     }
 
     public int getDistinctUserSolved() {
@@ -73,7 +74,6 @@ public class Problem implements Serializable{
     public static ArrayList<Problem> getProblemList() {
         return problemList;
     }
-
     public static ObservableList<Problem> getProblemListObservable() {
         ObservableList<Problem> list = FXCollections.observableArrayList(problemList);
         return list;
@@ -83,17 +83,12 @@ public class Problem implements Serializable{
     public StringProperty getProblemIDProperty() {
         return new SimpleStringProperty(ProblemID);
     }
-    public StringProperty getSolvedByTried() {
-        return new SimpleStringProperty(String.valueOf(distinctUserSolved) +" / " + String.valueOf(distinctUserTriedCnt) );
-    }
 
     public StringProperty getProblemNameProperty() {
         return new SimpleStringProperty(ProblemName);
     }
 
-    public StringProperty getAcceptedByTotal() {
-        return new SimpleStringProperty(String.valueOf(acceptedCnt) + " / " + String.valueOf(totalCnt));
-    }
+
 
     @Override
     public String toString() {

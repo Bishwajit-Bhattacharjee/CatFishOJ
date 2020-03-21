@@ -9,7 +9,7 @@ import java.util.Map;
 //Server + Client
 public class User implements Serializable{
 
-    final int NUMBER_OF_PROBLEMS = 4 ;
+    final int NUMBER_OF_PROBLEMS = 3 ;
 
     private  String handle;
     private  String password;
@@ -135,7 +135,7 @@ public class User implements Serializable{
                 "," + totalAttempted
                 ;
         tmp += "/" ;
-      //  System.out.println("User tostring" + isSolvedMap);
+
         for(Map.Entry<String ,Integer> entry : isSolvedMap.entrySet()){
             tmp += entry.getKey() + "," + Integer.toString(entry.getValue() ) + "," ;
         }

@@ -60,12 +60,5 @@ public class NetworkUtil {
             System.out.println("Closing Error in network : " + e.toString());
         }
     }
-    public void reset() {
-        try {
-            oos.reset();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
 

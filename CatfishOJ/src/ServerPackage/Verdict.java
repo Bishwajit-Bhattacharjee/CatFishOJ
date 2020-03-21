@@ -19,7 +19,6 @@ public class Verdict {
     private int verdictInt = -1;
     private static final String SUBMITTED_FILE_NAME_C = "userSolution.c";
     private static final String SUBMITTED_FILE_NAME_CPP = "userSolution.cpp";
-    private static final String SUBMITTED_FILE_NAME_JAVA = "userSolution.java";
 
 
     public  Verdict(ClientSubmit clientSubmit) {
@@ -86,14 +85,13 @@ public class Verdict {
 
         }
         else if(clientSubmit.getSubmitLanguage().equals("C++") ) {
-            new ProcessExecutor("g++ userSolution.cpp", "in.txt", "out.txt");
+             new ProcessExecutor("g++ userSolution.cpp", "in.txt", "out.txt");
             File file1 = new File("a.exe");
             if( file1.exists() ) return 0;
             return 1234;
         }
         else if( clientSubmit.getSubmitLanguage().equals("Java")){
             // write  for Java -_-
-            //new ProcessExecutor("javac userSolution.java", "in.txt","out.txt");
             return 1234;
         }
 
@@ -124,19 +122,11 @@ public class Verdict {
         */
 
         long startTime = System.currentTimeMillis();
-        int getVal = 0;
-        try {
-            getVal = new TimeOutClass(problem).check();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-       // if( getVal == 1) return 2;//means tle
 
         //  new ProcessExecutor("a.exe", problem.getINPUT_FILE_NAME(), "out.txt");
 
-       // ProcessExecutor executorProcess = new ProcessExecutor("a.exe", problem.getINPUT_FILE_NAME(), "out.txt");
-       /* try {
+        ProcessExecutor executorProcess = new ProcessExecutor("a.exe", problem.getINPUT_FILE_NAME(), "out.txt");
+        try {
 
             String line;
 
@@ -150,13 +140,12 @@ public class Verdict {
         } catch( Exception  e ) {
 
             e.printStackTrace();
-        }*/
+        }
 
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
         CPUTime = (totalTime/1000.0);
-        return getVal ;
-      //  return executorProcess.getExitVal();
+        return executorProcess.getExitVal();
     }
 
     public int isWrongAns() {

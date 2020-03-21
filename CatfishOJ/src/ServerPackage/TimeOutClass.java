@@ -13,10 +13,6 @@ class Task implements Callable {
     @Override
     public Integer call() throws Exception {
         new ProcessExecutor("a.exe", problem.getINPUT_FILE_NAME(), "out.txt");
-        if(Thread.currentThread().isInterrupted()){
-            return 1234567;
-        }
-
         return 0;
     }
 }

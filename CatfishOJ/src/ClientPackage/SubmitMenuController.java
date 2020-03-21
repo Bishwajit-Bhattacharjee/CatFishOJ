@@ -11,15 +11,8 @@ import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
 
 //Client
 public class SubmitMenuController {
@@ -32,10 +25,9 @@ public class SubmitMenuController {
     @FXML
     private JFXTextArea SolutionTextArea;
 
+
     @FXML
     private Label ProblemNameLabel;
-    @FXML
-    private Label fileName;
 
     public void setProblem(Problem problem) {
         this.problem = problem;
@@ -57,7 +49,6 @@ public class SubmitMenuController {
             e.printStackTrace();
         }
     }
-
     @FXML
     private void LogoutButtonClicked() {
 
@@ -67,66 +58,6 @@ public class SubmitMenuController {
             e.printStackTrace();
         }
     }
-    @FXML
-    private void UploadButtonClicked() {
-        String textCode=null;
-        if( language.equals(" ") ) {
-
-            Notifications notifications = Notifications.create()
-                    .title("Language not selected!")
-                    .text("Please select a language from the dropdown.")
-                    .graphic(null)
-                    .hideAfter(Duration.seconds(3))
-                    .position(Pos.TOP_RIGHT);
-            notifications.showWarning();
-
-        }
-        else {
-            FileChooser fc = new FileChooser();
-            fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.c", "*.cpp", "*.java"));
-            File file = fc.showOpenDialog(null);
-            if( file != null) {
-                fileName.setText(file.getName());
-                Notifications notifications = Notifications.create()
-                        .title("Confirmation!")
-                        .text("Your Code has been successfully submitted.")
-                        .graphic(null)
-                        .hideAfter(Duration.seconds(3))
-                        .position(Pos.TOP_RIGHT);
-                notifications.showConfirm();
-
-            }
-            else return;
-
-            try {
-                BufferedReader br = new BufferedReader(new FileReader(file.getName()));
-                StringBuilder sb = new StringBuilder();
-                String line = br.readLine();
-
-                while (line != null) {
-                    sb.append(line);
-                    sb.append(System.lineSeparator());
-                    line = br.readLine();
-                }
-                textCode = sb.toString();
-                br.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            //System.out.println("hello from UploadButtonClicked");
-            //System.out.println(textCode);
-            catfishClient.nc.write(new ClientSubmit(textCode, catfishClient.getCurrentUser(), problem, language) );
-            try {
-                catfishClient.showVerdictMenu(problem);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        }
-
-    }
-
-
-
     @FXML
     private void ExitButtonClicked() {
 

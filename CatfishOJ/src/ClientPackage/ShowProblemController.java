@@ -94,10 +94,10 @@ public class ShowProblemController {
                 ProblemTextArea.appendText(input.nextLine() + "\n"); // else read the next token
             }
             input.close();
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        ProblemTextArea.positionCaret(0);
     }
 
     public void setCatfishClient(CatfishClient catfishClient) {

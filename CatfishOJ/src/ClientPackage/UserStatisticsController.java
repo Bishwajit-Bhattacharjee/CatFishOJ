@@ -1,7 +1,5 @@
 package ClientPackage;
 
-import Common.ClientSubmit;
-import Common.CurrentUser;
 import Common.User;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
@@ -63,33 +61,16 @@ public class UserStatisticsController {
         }
     }
     public void setUser(User currentUser) {
-
-        catfishClient.nc.write(new CurrentUser(currentUser));
-        Object o =  null ;
-        while(true)
-        {
-
-            o = catfishClient.nc.read();
-            if(o != null && o instanceof CurrentUser) {
-                this.currentUser = ((CurrentUser)o).getCurrentUser() ;
-                System.out.println("Baaal from client: " + this.currentUser);
-                break;
-
-            }
-        }
-        //System.out.println("From client" + this. );
-        currentUser = this.currentUser ;
-
-        //this.currentUser = currentUser;
-
+        this.currentUser = currentUser;
+        System.out.println(currentUser);
         boolean flg = false;
-        if(this.currentUser.getTotalWA()!=0)
+        if(currentUser.getTotalWA()!=0)
             pieChartData.add(new PieChart.Data("Wrong Answer", currentUser.getTotalWA()));
-        if(this.currentUser.getTotalCE()!=0)
+        if(currentUser.getTotalCE()!=0)
             pieChartData.add(new PieChart.Data("Compilation Error", currentUser.getTotalCE()));
-        if(this.currentUser.getTotalAC()!=0)
+        if(currentUser.getTotalAC()!=0)
             pieChartData.add(new PieChart.Data("Accepted", currentUser.getTotalAC()));
-        if(this.currentUser.getTotalTLE()!=0)
+        if(currentUser.getTotalTLE()!=0)
             pieChartData.add(new PieChart.Data("Time Limit Exceed", currentUser.getTotalTLE()));
 
 

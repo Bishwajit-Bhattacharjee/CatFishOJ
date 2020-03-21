@@ -30,13 +30,13 @@ public class CatfishClient extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         //primaryStage.setX((primScreenBounds.getWidth() - primaryStage.getWidth()) / 2);
         //primaryStage.setY((primScreenBounds.getHeight() - primaryStage.getHeight()) / 3);
         stage = primaryStage;
 
         stage.setResizable(false);
-        //stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initStyle(StageStyle.TRANSPARENT);
         //stage.setAlwaysOnTop(true);
         nc = new NetworkUtil("127.0.0.1", 3333);
         clientID = (Integer) nc.read();
@@ -69,7 +69,7 @@ public class CatfishClient extends Application {
         LoginController controller = loader.getController();
         controller.setCatfishClient(this);
         stage.setScene(new Scene(root) );
-//        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        //        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
 //        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
 //        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 4);
         stage.show();
@@ -134,12 +134,14 @@ public class CatfishClient extends Application {
 
         UserStatisticsController controller = loader.getController();
         controller.setCatfishClient(this);
+
         controller.setUser(currentUser);
         stage.setScene(new Scene(root) );
         stage.show();
 //        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
 //        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
 //        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 4);
+
     }
 
 

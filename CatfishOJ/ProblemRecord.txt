@@ -1,4 +1,4 @@
-1001,Hello Catfish,0,0,0,2
-1002,Catfish,0,1,0,1
+1001,Hello Catfish,0,0,0,1
+1002,Catfish,0,0,0,3
 1003,Hello,0,1,0,1
-1004,Zawad and His Poor Brain,0,0,0,1
+1004,Zawad and His Poor Brain,0,0,0,0
